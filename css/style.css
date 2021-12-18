@@ -11,3 +11,12 @@ button:hover {
   transition: all 0.3s;
 }
 
+.btnAllView {
+  width: auto;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #ee82ee;
+}
+.btnAllView:hover {
+  background-color: #f07878;
+}
