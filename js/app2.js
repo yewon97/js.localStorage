@@ -1,9 +1,11 @@
 window.onload = () => {
-  // 버튼 가져오기
+  /* 버튼 가져오기 */
   const btnAllView = document.querySelector('.btnAllView');
   console.log(btnAllView);
+  const hTbody = document.querySelector('#htmlTbody');
+
   
-  // 버튼 클릭 시 -> 할 일 처리
+  /* 버튼 클릭 시 -> 할 일 처리 */
   btnAllView.addEventListener('click', () => {
     /* 할 일 처리 -> 로컬 스토리지 데이터 값들을 가져와서 출력 */
     // const getData = localStorage.getItem('background-color');
@@ -23,6 +25,7 @@ window.onload = () => {
     let ar = new Array();
     let result = '';
 
+    /* ar 배열에 객체 저장하기 */
     ar.push({ name: '홍길동', email: 'hong@hong.com', age: '25', pastime: '음악감상' });
     ar.push({ name: '가길동', email: 'gagil@hong.com', age: '21', pastime: '영화감상' });
     ar.push({ name: '나길동', email: 'nagilg@hong.com', age: '14', pastime: '미술감상' });
@@ -45,14 +48,31 @@ window.onload = () => {
       result += `<td>${ar[i].pastime}</td>`;
       result += `</tr>`;
     }
+    // console.log(result);
     // const hTbody = document.getElementById('htmlTbody');
     // console.log(hTbody);
 
-    // Append - jquery
+    // Empty - jquery
     // $('#htmlTbody').empty();
+    
+    // Empty 방식을 JS로 하기
+    // if(hTbody.children.length !== 0) {
+    //   for (j = 0; j < hTbody.children.length; j++) {
+    //     hTbody.removeChild(hTbody.childNodes[j]);
+    //     console.log(j);
+    //   }
+    // } -> 실패 자식이 한개 사라지면 0 1이 줄어들어서 연속적 실행이안됨
+
+    // while(hTbody.hasChildNodes()) {
+    //   console.log('hi');
+    //   hTbody.remove();
+    // } -> 실패 무한루프 발생
+    
+
+    // Append - jquery
     // $('#htmlTbody').append(result);
 
-    // insertHTML
+    // Append 방식을 insertHTML을 이용해 해결해보기
     // const hTbody = document.querySelector('#htmlTbody');
     // console.dir(hTbody.children.length !== 0);
     // if (hTbody.children.length !== 0) {
@@ -62,14 +82,13 @@ window.onload = () => {
     // }
     // hTbody.insertAdjacentHTML('beforeend', result);
   });
-  const btn = document.querySelector(".buttons");
-  const hTbody = document.querySelector('#htmlTbody');
-  
-  btn.addEventListener('click', function() {
-    if (hTbody.children.length !== 0) {
-      for (j = 0; j < hTbody.children.length; j++) {
-        hTbody.removeChild(hTbody.childNodes[j]);
-      }
-    }
-  });
+  // const btn = document.querySelector(".buttons");
+
+  // btn.addEventListener('click', function() {
+  //   if (hTbody.children.length !== 0) {
+  //     for (j = 0; j < hTbody.children.length; j++) {
+  //       hTbody.removeChild(hTbody.childNodes[j]);
+  //     }
+  //   }
+  // });
 };
