@@ -64,13 +64,7 @@ window.onload = () => {
   });
   const btn = document.querySelector(".buttons");
   const hTbody = document.querySelector('#htmlTbody');
-  // function ture() {
-  //   if (hTbody.children.length !== 0) {
-  //     for (j = 0; j < hTbody.children.length; j++) {
-  //       hTbody.removeChild(hTbody.childNodes[j]);
-  //     }
-  //   }
-  // }
+  
   btn.addEventListener('click', function() {
     if (hTbody.children.length !== 0) {
       for (j = 0; j < hTbody.children.length; j++) {
