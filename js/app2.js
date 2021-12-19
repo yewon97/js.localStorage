@@ -67,7 +67,14 @@ window.onload = () => {
     //   console.log('hi');
     //   hTbody.remove();
     // } -> 실패 무한루프 발생
-    
+  
+    // while(hTbody.children.length !== 0) {
+    //   console.log('hi');
+    //   hTbody.remove();
+    // }
+
+    hTbody.innerHTML = "";
+
 
     // Append - jquery
     // $('#htmlTbody').append(result);
@@ -80,7 +87,7 @@ window.onload = () => {
     //     hTbody.removeChild(hTbody.childNodes[j]);
     //   }
     // }
-    // hTbody.insertAdjacentHTML('beforeend', result);
+    hTbody.insertAdjacentHTML('beforeend', result);
   });
   // const btn = document.querySelector(".buttons");
 
