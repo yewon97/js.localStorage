@@ -90,13 +90,32 @@ window.onload = () => {
     // hTbody.innerHTML = result;
 
     /* 결과 변수 -> 우선 반복문 쓰지 않고 하나만 출력 */
+    // let result = '';
+    // result += `<tr>`;
+    // result += `<td class="align-middle">${localStorage.key(0)}</td>`;
+    // result += `<td class="align-middle">${localStorage.getItem(localStorage.key(0))}</td>`;
+    // result += `<td><button class="btnRemove">Remove</button></td>`;
+    // result += `</tr>`;
+    // console.log(result);
+    // hTbody.innerHTML = result;
+
+    /* for문을 사용해 다 출력하기 */
+    let ar = new Array();
     let result = '';
-    result += `<tr>`;
-    result += `<td class="align-middle">${localStorage.key(0)}</td>`;
-    result += `<td class="align-middle">${localStorage.getItem(localStorage.key(0))}</td>`;
-    result += `<td><button class="btnRemove">Remove</button></td>`;
-    result += `</tr>`;
-    console.log(result);
+    for(i=0; i<localStorage.length; i++) {
+      let key = localStorage.key(i);
+      result += `<tr>`;
+      result += `<td class="align-middle">${key}</td>`;
+      result += `<td class="align-middle">${localStorage.getItem(key)}</td>`;
+      result += `<td><button class="btnRemove">Remove</button></td>`;
+      result += `</tr>`;
+      
+      // 배열에 저장
+      ar.push(result);
+    }
+    console.log(ar);
+    // append(붙이기)
+    hTbody.insertAdjacentHTML('beforeend', result);
   })
   };
   // const btn = document.querySelector(".buttons");
