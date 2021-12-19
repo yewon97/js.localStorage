@@ -22,15 +22,15 @@ window.onload = () => {
     // console.log(localStorage.length);
 
     /* 배열 정보를 동적으로 테이블 생성하여 삽입하기 -> tbody */
-    let ar = new Array();
-    let result = '';
+    // let ar = new Array();
+    // let result = '';
 
     /* ar 배열에 객체 저장하기 */
-    ar.push({ name: '홍길동', email: 'hong@hong.com', age: '25', pastime: '음악감상' });
-    ar.push({ name: '가길동', email: 'gagil@hong.com', age: '21', pastime: '영화감상' });
-    ar.push({ name: '나길동', email: 'nagilg@hong.com', age: '14', pastime: '미술감상' });
-    ar.push({ name: '다길동', email: 'dagilg@hong.com', age: '45', pastime: '운동하기' });
-    ar.push({ name: '마길동', email: 'magilg@hong.com', age: '38', pastime: '티비보기' });
+    // ar.push({ name: '홍길동', email: 'hong@hong.com', age: '25', pastime: '음악감상' });
+    // ar.push({ name: '가길동', email: 'gagil@hong.com', age: '21', pastime: '영화감상' });
+    // ar.push({ name: '나길동', email: 'nagilg@hong.com', age: '14', pastime: '미술감상' });
+    // ar.push({ name: '다길동', email: 'dagilg@hong.com', age: '45', pastime: '운동하기' });
+    // ar.push({ name: '마길동', email: 'magilg@hong.com', age: '38', pastime: '티비보기' });
 
     // console.log(ar[0]);
     // console.log(ar[0]['name']);
@@ -39,15 +39,15 @@ window.onload = () => {
     // console.log(ar[3].name);
 
     /* 반복문을 순회하면서 배열의 정보를 result 변수에 누적 */
-    for (const i in ar) {
-      // console.log(i);
-      result += `<tr>`;
-      result += `<td>${ar[i].name}</td>`;
-      result += `<td>${ar[i].email}</td>`;
-      result += `<td>${ar[i].age}</td>`;
-      result += `<td>${ar[i].pastime}</td>`;
-      result += `</tr>`;
-    }
+    // for (const i in ar) {
+    //   // console.log(i);
+    //   result += `<tr>`;
+    //   result += `<td>${ar[i].name}</td>`;
+    //   result += `<td>${ar[i].email}</td>`;
+    //   result += `<td>${ar[i].age}</td>`;
+    //   result += `<td>${ar[i].pastime}</td>`;
+    //   result += `</tr>`;
+    // }
     // console.log(result);
     // const hTbody = document.getElementById('htmlTbody');
     // console.log(hTbody);
@@ -75,7 +75,6 @@ window.onload = () => {
 
     hTbody.innerHTML = "";
 
-
     // Append - jquery
     // $('#htmlTbody').append(result);
 
@@ -87,8 +86,19 @@ window.onload = () => {
     //     hTbody.removeChild(hTbody.childNodes[j]);
     //   }
     // }
-    hTbody.insertAdjacentHTML('beforeend', result);
-  });
+    // hTbody.insertAdjacentHTML('beforeend', result);
+    // hTbody.innerHTML = result;
+
+    /* 결과 변수 -> 우선 반복문 쓰지 않고 하나만 출력 */
+    let result = '';
+    result += `<tr>`;
+    result += `<td class="align-middle">${localStorage.key(0)}</td>`;
+    result += `<td class="align-middle">${localStorage.getItem(localStorage.key(0))}</td>`;
+    result += `<td><button class="btnRemove">Remove</button></td>`;
+    result += `</tr>`;
+    console.log(result);
+  })
+  };
   // const btn = document.querySelector(".buttons");
 
   // btn.addEventListener('click', function() {
@@ -98,4 +108,3 @@ window.onload = () => {
   //     }
   //   }
   // });
-};
